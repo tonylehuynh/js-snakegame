@@ -34,7 +34,13 @@ gameStart();
 
 
 
-function gameStart(){};
+function gameStart(){
+	gameRunning = true;
+	scoreText.textContent = score;
+	createFood();
+	drawFood();
+	nextTick();
+};
 function nextTick(){};
 function clearBoard(){};
 
