@@ -77,7 +77,24 @@ function drawFood(){
 	context.fillStyle = foodColor;
 	context.fillRect(foodX, foodY, unitSize, unitSize);
 };
-function moveSnake(){};
+function moveSnake(){
+	// Create a new head of the snake in direction that we're moving, and then eliminate the end tail part
+	const snakeHead = {x: snake[0].x + xVelocity,
+					   y: snake[0].y + yVelocity};
+	// Add new snakeHead at the start of the snake				   
+	snake.unshift(snakeHead);
+	// Check if food is eaten, where coordinates of snake head match the food coordinates
+	if(snake[0].x == foodX && snake[0].y == foodY){
+		// If food is eaten. Increment score and then create new food
+		score+=1;
+		scoreText.textContent = score;
+		createFood();
+	}
+	else{
+		// Eliminate tail everytime snake moves
+		snake.pop();
+	}
+};
 function drawSnake(){
 	context.fillStyle = snakeColor;
 	context.strokeStyle = snakeBorder;
