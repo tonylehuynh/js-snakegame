@@ -31,12 +31,14 @@ window.addEventListener("keydown", changeDirection);
 resetButton.addEventListener("click", resetGame);
 
 gameStart();
-createFood();
+
 
 
 function gameStart(){};
 function nextTick(){};
 function clearBoard(){};
+
+// Function to randomly generate coordinates for food item
 function createFood(){
 	function randomFood(min, max){
 		// * unitSize so that all randomly generated numbers are divisible by 25
@@ -46,7 +48,12 @@ function createFood(){
 	foodX = randomFood(0, gameWidth - unitSize);
 	foodY = randomFood(0, gameWidth - unitSize);
 };
-function drawFood(){};
+
+// Creates food item as a red square
+function drawFood(){
+	context.fillStyle = foodColor;
+	context.fillRect(foodX, foodY, unitSize, unitSize);
+};
 function moveSnake(){};
 function drawSnake(){};
 function changeDirection(){};
