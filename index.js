@@ -1,0 +1,29 @@
+const gameBoard = document.querySelector("#gameBoard");
+const context = gameBoard.getContext("2d");
+const scoreText = document.querySelector("#scoreText");
+const resetButton = document.querySelector("#resetButton");
+const gameWidth = gameBoard.width;
+const gameHeight = gameBoard.height;
+const boardBackground = "white";
+const snakeColor = "lightgreen";
+const snakeBorder = "black";
+const foodColor = "red";
+const unitSize = 25; // represents 25 px
+let gameRunning = false;
+// How far to move snake every game tick. 
+let xVelocity = unitSize;
+let yVelocity = 0;
+// Food coordinates
+let foodX;
+let foodY;
+let score = 0;
+// Snake will be an array of objects each representing its body parts
+// x and y represent coordinates
+let snake = [
+	{x: unitSize * 4, y: 0},
+	{x: unitSize * 3, y: 0},
+	{x: unitSize * 2, y: 0},
+	{x: unitSize, y: 0},
+	{x: 0, y: 0},
+];
+
