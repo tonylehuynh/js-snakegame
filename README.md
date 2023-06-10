@@ -6,6 +6,6 @@
 
 Simple game of Snake Game !
 
-**Deployed website**: 
+**Deployed website**: https://tonylehuynh-snakegamejs.netlify.app/
 
 

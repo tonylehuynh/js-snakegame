@@ -1,6 +1,7 @@
 const gameBoard = document.querySelector("#gameBoard");
 const context = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
+const startButton = document.querySelector("#startButton");
 const resetButton = document.querySelector("#resetButton");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
@@ -28,9 +29,8 @@ let snake = [
 ];
 
 window.addEventListener("keydown", changeDirection);
+startButton.addEventListener("click", gameStart);
 resetButton.addEventListener("click", resetGame);
-
-gameStart();
 
 
 
