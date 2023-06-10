@@ -56,7 +56,10 @@ function nextTick(){
 		displayGameOver();
 	}
 };
-function clearBoard(){};
+function clearBoard(){
+	context.fillStyle = boardBackground;
+	context.fillRect(0, 0, gameWidth, gameHeight);
+};
 
 // Function to randomly generate coordinates for food item
 function createFood(){
