@@ -31,3 +31,16 @@ window.addEventListener("keydown", changeDirection);
 resetButton.addEventListener("click", resetGame);
 
 gameStart();
+
+
+function gameStart(){};
+function nextTick(){};
+function clearBoard(){};
+function createFood(){};
+function drawFood(){};
+function moveSnake(){};
+function drawSnake(){};
+function changeDirection(){};
+function checkGameOver(){};
+function displayGameOver(){};
+function resetGame(){};
