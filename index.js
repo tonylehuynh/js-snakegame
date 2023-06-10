@@ -104,7 +104,39 @@ function drawSnake(){
 		context.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize)
 	})
 };
-function changeDirection(){};
+function changeDirection(event){
+	const keyPressed = event.keyCode;
+	// Arrow keyboard keys have specific codes
+	const LEFTKEY = 37;
+	const UPKEY = 38;
+	const RIGHTKEY = 39;
+	const DOWNKEY = 40;
+
+	const goingUp = (yVelocity == -unitSize);
+	const goingDowm = (yVelocity == unitSize);
+	const goingRight = (xVelocity == unitSize);
+	const goingLeft = (xVelocity == -unitSize);
+
+	// Snake can't move left and then right, as well as up and then down
+	switch (true) {
+		case (keyPressed == LEFTKEY && !goingRight):
+			xVelocity = -unitSize;
+			yVelocity = 0;
+			break;
+		case (keyPressed == UPKEY && !goingDowm):
+			xVelocity = 0;
+			yVelocity = -unitSize;
+			break;
+		case (keyPressed == RIGHTKEY && !goingLeft):
+			xVelocity = unitSize;
+			yVelocity = 0;
+			break;
+		case (keyPressed == DOWNKEY && !goingUp):
+			xVelocity = 0;
+			yVelocity = unitSize;
+			break;
+	}
+};
 function checkGameOver(){};
 function displayGameOver(){};
 function resetGame(){};
