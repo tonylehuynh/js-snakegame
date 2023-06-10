@@ -41,7 +41,21 @@ function gameStart(){
 	drawFood();
 	nextTick();
 };
-function nextTick(){};
+function nextTick(){
+	if(gameRunning){
+		setTimeout(() => {
+			clearBoard();
+			drawFood();
+			moveSnake();
+			drawSnake();
+			checkGameOver();
+			nextTick();
+		}, 75);
+	}
+	else{
+		displayGameOver();
+	}
+};
 function clearBoard(){};
 
 // Function to randomly generate coordinates for food item
