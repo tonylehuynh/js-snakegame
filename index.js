@@ -167,4 +167,18 @@ function displayGameOver(){
 	context.fillText("GAME OVER", gameWidth / 2, gameHeight / 2);
 	gameRunning = false;
 };
-function resetGame(){};
+function resetGame(){
+	score = 0;
+	xVelocity = unitSize;
+	yVelocity = 0;
+
+	snake = [
+		{x: unitSize * 4, y: 0},
+		{x: unitSize * 3, y: 0},
+		{x: unitSize * 2, y: 0},
+		{x: unitSize, y: 0},
+		{x: 0, y: 0},
+	];
+
+	gameStart();
+};
